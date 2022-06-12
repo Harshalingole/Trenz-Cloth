@@ -1,28 +1,21 @@
-// import logo from "./logo.svg";
-// import "./App.css";
-// import "./index.scss";
-// import "./categories.styles.scss";
-import { Route, Routes } from "react-router-dom";
-import Navigation from "./components/routes/navigation/navigation.component";
-import Home from "./components/routes/home/home.component";
-import SignIn from "./components/routes/sign_in/sign_in.component";
-import SignUpForm from "./components/routes/sign-up-form/sign-up-component";
+import { Routes, Route } from "react-router-dom";
 
-const Shop = () => {
-  return <h1>I am the shop page</h1>;
-};
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import Authentication from "./routes/authentication/authentication.component";
 
-function App() {
+import Shop from "./routes/shop/shop.component";
+
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
-        <Route path="sign-in" element={<SignIn />} />
-        <Route path="sign-up" element={<SignUpForm />} />
+        <Route path="auth" element={<Authentication />} />
       </Route>
     </Routes>
   );
-}
+};
 
 export default App;
